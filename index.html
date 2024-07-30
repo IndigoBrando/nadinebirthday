@@ -7,7 +7,71 @@
   <title>Birthday Cake</title>
   <link rel="stylesheet" href="cake.css">
   <style>
-    
+    body {
+      background-color: #ffe4e1;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+    }
+
+    .cake-container {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .candle {
+      position: relative;
+    }
+
+    .flame-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    .flame {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .flame.red {
+      background-color: red;
+    }
+
+    .flame.orange {
+      background-color: orange;
+    }
+
+    .flame.gold {
+      background-color: gold;
+    }
+
+    .flame.white {
+      background-color: white;
+    }
+
+    .base.blue {
+      width: 10px;
+      height: 20px;
+      background-color: blue;
+    }
+
+    .base.black {
+      width: 10px;
+      height: 5px;
+      background-color: black;
+    }
+
+    .smoke-wrapper {
+      display: none;
+      justify-content: center;
+    }
+
+    .smoke {
+      width: 10px;
+      height: 10px;
+      background-color: gray;
+      border-radius: 50%;
+    }
+
     .letter {
       background-color: #f9f9f9;
       border: 1px solid #ddd;
@@ -21,7 +85,6 @@
     .letter:hover {
       background-color: #e0e0e0;
     }
-
 
     .modal {
       display: none;
@@ -60,15 +123,44 @@
       color: black;
       text-decoration: none;
     }
+
+    .audio-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .happy-birthday {
+      text-align: center;
+      font-size: 48px;
+      color: #ff69b4;
+      margin-top: 20px;
+      text-shadow: 2px 2px #ff1493;
+    }
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background-color: #ff6347;
+      border-radius: 50%;
+      top: -10px;
+      animation: fall 4s infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(100vh);
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="audio-container">
-    <audio controls>
-      <source src="hbd.mp3" type="audio/mpeg">
-    </audio>
-  </div>
+  <div class="happy-birthday">Happy Birthday!</div>
 
   <div class="cake-container">
     <div class="cake1">
@@ -81,23 +173,26 @@
           <div class="base blue"></div>
           <div class="base black"></div>
         </div>
-        <div class="smoke-wrapper" id="smokeWrapper" style="display: none;">
+        <div class="smoke-wrapper" id="smokeWrapper">
           <div class="smoke"></div>
         </div>
       </div>
     </div>
-    <div class="cake2">
-    
-    </div>
+    <div class="cake2"></div>
   </div>
-
-
-
-
 
   <div class="letter" id="openLetter"><img src="pic.png" width="150px" height="150px"></div>
 
-  <script src="cake.js"> </script>
+
+
+  <div class="audio-container">
+    <audio controls>
+      <source src="hbd.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script src="cake.js"></script>
+ 
 </body>
 
 </html>
